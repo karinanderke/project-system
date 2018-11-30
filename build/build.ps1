@@ -129,7 +129,7 @@ function LocateVisualStudio {
   }
 
   $vsWhereExe = GetVsWhereExe
-  $vsInstallDir = & $vsWhereExe -all -latest -prerelease -property installationPath -requires Microsoft.Component.MSBuild -requires Microsoft.VisualStudio.Component.VSSDK -requires Microsoft.Net.Component.4.6.TargetingPack -requires Microsoft.VisualStudio.Component.Roslyn.Compiler
+  $vsInstallDir = & $vsWhereExe -all -latest -prerelease -property installationPath  -version 16.0 -requires Microsoft.Component.MSBuild -requires Microsoft.VisualStudio.Component.VSSDK -requires Microsoft.Net.Component.4.6.TargetingPack -requires Microsoft.VisualStudio.Component.Roslyn.Compiler
 
   if (!(Test-Path $vsInstallDir)) {
     throw "Failed to locate Visual Studio (exit code '$lastExitCode')."
