@@ -124,7 +124,7 @@ function InstallVSIX([string] $vsixExpInstalleExe, [string] $rootsuffix, [string
 }
 
 function LocateVisualStudio {
-  if ($InVSEnvironment) {
+  if ($InVSEnvironment -and -not $integrationTest) {
     return $env:VSINSTALLDIR
   }
 
